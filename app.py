@@ -16,7 +16,6 @@ class Name(Field):
          
          super().__init__(value);
               
-
 class Phone(Field):
     IS_REQUIRED = True;
     REQURIED_LENGTH = 10;
@@ -30,7 +29,6 @@ class Phone(Field):
             
             super().__init__(value);
          
-
 class Record:
     def __init__(self, name):
         self.name = Name(name);
@@ -52,8 +50,6 @@ class Record:
     def edit_phone(self, phone, new_phone):
           if phone in self.phones:
               self.phones[self.phones.index(phone)] = new_phone;
-
-
 
 class AddressBook(UserDict):
        def add_record(self, record):
