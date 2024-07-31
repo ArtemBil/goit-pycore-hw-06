@@ -40,8 +40,8 @@ class Record:
     def add_phone(self, phone):
            self.phones.append(Phone(phone));
     
-    def remove_phone(self, phone):
-           self.phones.remove(phone);
+    def remove_phone(self, target):
+           self.phones = list(filter(lambda phone: phone.value != target, self.phones));
 
     def find_phone(self, phone):
            if phone in self.phones:
@@ -68,6 +68,7 @@ book = AddressBook();
 john_record = Record("John");
 john_record.add_phone("1234567890");
 john_record.add_phone("5555555555");
+john_record.remove_phone('5555555555')
 
 # Додавання запису John до адресної книги
 book.add_record(john_record);
